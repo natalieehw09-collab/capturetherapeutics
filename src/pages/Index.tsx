@@ -86,6 +86,7 @@ const VALUES = [
     statement: "Reducing wait times and making care easier to reach.",
     detail: "We open more space in our schedules, simplify intake, and make sure the first appointment isn’t the hardest one.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+    alt: "Clinician welcoming a patient at the front desk",
   },
   {
     icon: HandHeart,
@@ -93,13 +94,15 @@ const VALUES = [
     statement: "A whole-team approach to healthcare.",
     detail: "Our clinicians work together — not in silos — so your plan is shaped by every perspective you need.",
     image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=900&q=80",
+    alt: "Physiotherapist guiding a patient through an exercise",
   },
   {
     icon: ShieldCheck,
     name: "Trust",
     statement: "Clear, timely, and independent support.",
     detail: "From plain-language assessments to honest timelines, we keep the people we serve fully informed.",
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=900&q=80",
+    alt: "Therapist reassuringly holding a patient’s hands",
   },
   {
     icon: TreePine,
@@ -107,6 +110,7 @@ const VALUES = [
     statement: "Building partnerships that last.",
     detail: "We invest in schools, employers, and local programs so care extends well beyond our clinic doors.",
     image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=900&q=80",
+    alt: "Healthcare workers meeting with community members",
   },
   {
     icon: TrendingUp,
@@ -114,6 +118,7 @@ const VALUES = [
     statement: "Supporting staff, patients, and partners as they move forward.",
     detail: "Healing is a beginning. We keep showing up as people, teams, and businesses grow into what’s next.",
     image: "https://images.unsplash.com/photo-1518644961665-ed172691aaa1?auto=format&fit=crop&w=900&q=80",
+    alt: "Person walking confidently outdoors, recovered and active",
   },
 ];
 
@@ -142,8 +147,8 @@ const LOCATIONS = [
 ];
 
 const TALKS = [
-  { title: "5 factors that can delay recovery time", tag: "Recovery", excerpt: "Small habits and overlooked obstacles that quietly slow your healing — and how to move past them.", img: "1559757148-5c350d0d3c56" },
-  { title: "Mental Health — how can an OT help?", tag: "Mental Health", excerpt: "Occupational therapists bring a unique lens to mental wellness. Here’s how they support everyday life.", img: "1571019613454-1cb2f99b2d8b" },
+  { title: "5 factors that can delay recovery time", tag: "Recovery", excerpt: "Small habits and overlooked obstacles that quietly slow your healing — and how to move past them.", img: "1571019613454-1cb2f99b2d8b" },
+  { title: "Mental Health — how can an OT help?", tag: "Mental Health", excerpt: "Occupational therapists bring a unique lens to mental wellness. Here’s how they support everyday life.", img: "1559757148-5c350d0d3c56" },
   { title: "Self-Care", tag: "Wellness", excerpt: "Practical, sustainable self-care rituals that actually fit into a busy life.", img: "1506905925346-21bda4d32df4" },
 ];
 
