@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/capture/Navbar";
 import Chatbot from "@/components/capture/Chatbot";
+import logo from "@/assets/capture-logo.png";
 
 const BOOK_URL = "https://physiofirst.janeapp.com/";
 
@@ -40,10 +41,10 @@ const BookButton = ({
   className?: string;
 }) => {
   const base =
-    "inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium transition-all hover:scale-[1.02] shadow-[var(--shadow-card)]";
+    "inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold transition-all hover:scale-[1.02] shadow-[var(--shadow-card)]";
   const styles =
     variant === "primary"
-      ? "bg-primary text-primary-foreground hover:bg-primary/90"
+      ? "bg-accent text-accent-foreground hover:brightness-95"
       : variant === "light"
       ? "bg-background text-foreground hover:bg-muted"
       : "bg-transparent border border-current hover:bg-foreground/5";
@@ -86,6 +87,7 @@ const VALUES = [
     statement: "Reducing wait times and making care easier to reach.",
     detail: "We open more space in our schedules, simplify intake, and make sure the first appointment isn’t the hardest one.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+    alt: "Clinician welcoming a patient at the front desk",
   },
   {
     icon: HandHeart,
@@ -93,13 +95,15 @@ const VALUES = [
     statement: "A whole-team approach to healthcare.",
     detail: "Our clinicians work together — not in silos — so your plan is shaped by every perspective you need.",
     image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=900&q=80",
+    alt: "Physiotherapist guiding a patient through an exercise",
   },
   {
     icon: ShieldCheck,
     name: "Trust",
     statement: "Clear, timely, and independent support.",
     detail: "From plain-language assessments to honest timelines, we keep the people we serve fully informed.",
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=900&q=80",
+    alt: "Therapist reassuringly holding a patient’s hands",
   },
   {
     icon: TreePine,
@@ -107,6 +111,7 @@ const VALUES = [
     statement: "Building partnerships that last.",
     detail: "We invest in schools, employers, and local programs so care extends well beyond our clinic doors.",
     image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=900&q=80",
+    alt: "Healthcare workers meeting with community members",
   },
   {
     icon: TrendingUp,
@@ -114,6 +119,7 @@ const VALUES = [
     statement: "Supporting staff, patients, and partners as they move forward.",
     detail: "Healing is a beginning. We keep showing up as people, teams, and businesses grow into what’s next.",
     image: "https://images.unsplash.com/photo-1518644961665-ed172691aaa1?auto=format&fit=crop&w=900&q=80",
+    alt: "Person walking confidently outdoors, recovered and active",
   },
 ];
 
@@ -142,8 +148,8 @@ const LOCATIONS = [
 ];
 
 const TALKS = [
-  { title: "5 factors that can delay recovery time", tag: "Recovery", excerpt: "Small habits and overlooked obstacles that quietly slow your healing — and how to move past them.", img: "1559757148-5c350d0d3c56" },
-  { title: "Mental Health — how can an OT help?", tag: "Mental Health", excerpt: "Occupational therapists bring a unique lens to mental wellness. Here’s how they support everyday life.", img: "1571019613454-1cb2f99b2d8b" },
+  { title: "5 factors that can delay recovery time", tag: "Recovery", excerpt: "Small habits and overlooked obstacles that quietly slow your healing — and how to move past them.", img: "1571019613454-1cb2f99b2d8b" },
+  { title: "Mental Health — how can an OT help?", tag: "Mental Health", excerpt: "Occupational therapists bring a unique lens to mental wellness. Here’s how they support everyday life.", img: "1559757148-5c350d0d3c56" },
   { title: "Self-Care", tag: "Wellness", excerpt: "Practical, sustainable self-care rituals that actually fit into a busy life.", img: "1506905925346-21bda4d32df4" },
 ];
 
@@ -187,7 +193,7 @@ const ValueStory = ({ v, i }: { v: (typeof VALUES)[number]; i: number }) => {
 
       <div className={`${flip ? "md:order-1" : ""} relative`}>
         <div className="aspect-[5/4] rounded-[2rem] overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card">
-          <img src={v.image} alt={v.name} loading="lazy" className="w-full h-full object-cover" />
+          <img src={v.image} alt={v.alt} loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div className="absolute -bottom-4 -right-4 bg-background rounded-2xl border border-border shadow-[var(--shadow-card)] px-4 py-2.5 flex items-center gap-2">
           <span className="font-serif text-2xl text-primary">0{i + 1}</span>
@@ -252,10 +258,10 @@ const Index = () => {
           <div className="lg:col-span-5 relative animate-scale-in">
             <div className="aspect-[4/5] rounded-[2.25rem] bg-card overflow-hidden shadow-[var(--shadow-float)] border border-border">
               <img
-                src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=900&q=80"
-                alt="Compassionate healthcare team supporting a patient"
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=900&q=80"
+                alt="Capture Therapeutics physiotherapist guiding a patient through rehabilitation"
                 className="w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
               />
             </div>
             <div className="absolute -left-3 -bottom-4 md:-left-8 md:-bottom-8 bg-background rounded-2xl border border-border shadow-[var(--shadow-card)] p-4 max-w-[16rem]">
@@ -588,11 +594,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center">
-                  <HandHeart className="w-4 h-4" />
-                </span>
-                <span className="font-serif text-lg">Capture Therapeutics</span>
+              <div className="mb-4">
+                <img src={logo} alt="Capture Therapeutics" className="h-10 w-auto" />
               </div>
               <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
                 A collaborative healthcare team focused on timely, high-quality care across the Maritimes.

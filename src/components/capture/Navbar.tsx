@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/capture-logo.png";
 
 const NAV = [
   { label: "Patients", href: "#patients" },
@@ -17,20 +18,15 @@ const BOOK_URL = "https://physiofirst.janeapp.com/";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-lg">
+    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 shrink-0">
-          <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center">
-            <Heart className="w-4 h-4" />
-          </span>
-          <span className="font-serif text-lg leading-tight">
-            Capture <span className="text-primary">Therapeutics</span>
-          </span>
+        <a href="#top" className="flex items-center gap-2 shrink-0" aria-label="Capture Therapeutics home">
+          <img src={logo} alt="Capture Therapeutics" className="h-9 md:h-10 w-auto" />
         </a>
 
         <nav className="hidden xl:flex items-center gap-6 text-sm text-muted-foreground">
           {NAV.map((n) => (
-            <a key={n.label} href={n.href} className="hover:text-foreground transition-colors">
+            <a key={n.label} href={n.href} className="hover:text-primary transition-colors">
               {n.label}
             </a>
           ))}
@@ -41,7 +37,7 @@ const Navbar = () => {
             href={BOOK_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:bg-primary/90 hover:scale-[1.02] transition-all shadow-[var(--shadow-card)]"
+            className="hidden sm:inline-flex items-center rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold hover:brightness-95 hover:scale-[1.02] transition-all shadow-[var(--shadow-card)]"
           >
             Book Now
           </a>
@@ -72,7 +68,7 @@ const Navbar = () => {
               href={BOOK_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 text-center rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-medium"
+              className="mt-2 text-center rounded-full bg-accent text-accent-foreground px-5 py-3 text-sm font-semibold"
             >
               Book Now
             </a>

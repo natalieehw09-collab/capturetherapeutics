@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['var(--font-body, Inter)', 'system-ui', 'sans-serif'],
-        'serif': ['var(--font-heading, Merriweather)', 'Georgia', 'serif'],
+        'serif': ['var(--font-heading, Outfit)', 'Inter', 'sans-serif'],
+        'display': ['var(--font-heading, Outfit)', 'Inter', 'sans-serif'],
       },
       fontSize: {
         'xs':   ['12px', { lineHeight: '16px' }],
