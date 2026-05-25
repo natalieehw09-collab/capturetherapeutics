@@ -192,7 +192,7 @@ const ValueStory = ({ v, i }: { v: (typeof VALUES)[number]; i: number }) => {
 
       <div className={`${flip ? "md:order-1" : ""} relative`}>
         <div className="aspect-[5/4] rounded-[2rem] overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card">
-          <img src={v.image} alt={v.name} loading="lazy" className="w-full h-full object-cover" />
+          <img src={v.image} alt={v.alt} loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div className="absolute -bottom-4 -right-4 bg-background rounded-2xl border border-border shadow-[var(--shadow-card)] px-4 py-2.5 flex items-center gap-2">
           <span className="font-serif text-2xl text-primary">0{i + 1}</span>
