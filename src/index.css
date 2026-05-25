@@ -6,44 +6,47 @@
 
 @layer base {
   :root {
-    --font-heading-weight: 600;
+    --font-heading-weight: 500;
     --font-body-weight: 400;
 
-    /* Capture Therapeutics — warm healthcare palette */
-    --color-background: oklch(99% 0.005 200); /* near-white */
-    --color-foreground: oklch(25% 0.02 230); /* deep ink-blue */
+    /* Capture Therapeutics — brand palette from logo (slate teal + aqua) */
+    --color-background: oklch(98.5% 0.006 200);
+    --color-foreground: oklch(35% 0.018 210); /* logo slate */
 
-    --color-card: oklch(98% 0.008 195);
-    --color-card-foreground: oklch(25% 0.02 230);
+    --color-card: oklch(99% 0.004 200);
+    --color-card-foreground: oklch(35% 0.018 210);
 
-    --color-popover: oklch(99% 0.005 200);
-    --color-popover-foreground: oklch(25% 0.02 230);
+    --color-popover: oklch(99% 0.004 200);
+    --color-popover-foreground: oklch(35% 0.018 210);
 
-    --color-primary: oklch(48% 0.09 215); /* calm healthcare blue */
-    --color-primary-foreground: oklch(99% 0.005 200);
+    /* Primary = slate teal from logo wordmark */
+    --color-primary: oklch(45% 0.022 215);
+    --color-primary-foreground: oklch(99% 0.004 200);
 
-    --color-secondary: oklch(94% 0.025 175); /* soft mint */
-    --color-secondary-foreground: oklch(30% 0.05 215);
+    /* Secondary = pale aqua */
+    --color-secondary: oklch(95% 0.025 195);
+    --color-secondary-foreground: oklch(40% 0.022 215);
 
     --color-muted: oklch(96% 0.012 200);
-    --color-muted-foreground: oklch(48% 0.02 230);
+    --color-muted-foreground: oklch(50% 0.016 210);
 
-    --color-accent: oklch(70% 0.11 165); /* warm sage green */
-    --color-accent-foreground: oklch(20% 0.02 230);
+    /* Accent = aqua/turquoise from logo florals */
+    --color-accent: oklch(78% 0.09 195);
+    --color-accent-foreground: oklch(28% 0.022 215);
 
     --color-destructive: oklch(63% 0.2 25);
-    --color-destructive-foreground: oklch(99% 0.005 200);
+    --color-destructive-foreground: oklch(99% 0.004 200);
 
     --color-border: oklch(92% 0.012 200);
     --color-input: oklch(92% 0.012 200);
-    --color-ring: oklch(48% 0.09 215);
+    --color-ring: oklch(78% 0.09 195);
 
     --radius: 1.25rem;
 
-    --gradient-hero: linear-gradient(135deg, oklch(96% 0.03 200) 0%, oklch(94% 0.04 175) 60%, oklch(96% 0.02 90) 100%);
-    --gradient-soft: linear-gradient(180deg, oklch(98% 0.012 200) 0%, oklch(96% 0.025 175) 100%);
-    --shadow-card: 0 8px 24px -12px oklch(40% 0.05 215 / 0.18);
-    --shadow-float: 0 16px 40px -16px oklch(40% 0.05 215 / 0.28);
+    --gradient-hero: linear-gradient(140deg, oklch(97% 0.018 200) 0%, oklch(94% 0.04 195) 55%, oklch(96% 0.012 200) 100%);
+    --gradient-soft: linear-gradient(180deg, oklch(98% 0.008 200) 0%, oklch(95% 0.025 195) 100%);
+    --shadow-card: 0 8px 24px -14px oklch(35% 0.04 210 / 0.22);
+    --shadow-float: 0 20px 50px -20px oklch(35% 0.04 210 / 0.32);
 
     --tag-financing: oklch(78% 0.06 250);
     --tag-lifestyle: oklch(73% 0.05 155);
@@ -53,9 +56,9 @@
     --tag-creativity: oklch(77% 0.07 350);
     --tag-growth: oklch(74% 0.08 90);
 
-    --cream: oklch(96% 0.015 85);
-    --cream-foreground: oklch(25% 0 0);
-    --surface-elevated: oklch(99% 0.005 200);
+    --cream: oklch(96% 0.012 200);
+    --cream-foreground: oklch(35% 0.018 210);
+    --surface-elevated: oklch(99% 0.004 200);
     --shadow-soft: oklch(0% 0 0);
   }
 
@@ -120,13 +123,13 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading, Merriweather), Georgia, serif;
+    font-family: var(--font-heading, 'Outfit'), 'Inter', system-ui, sans-serif;
     font-weight: var(--font-heading-weight);
     @apply tracking-tight;
   }
 
   a, button, input, label {
-    font-family: var(--font-heading, Merriweather), Georgia, serif;
+    font-family: var(--font-body, 'Inter'), system-ui, sans-serif;
   }
 }
 
