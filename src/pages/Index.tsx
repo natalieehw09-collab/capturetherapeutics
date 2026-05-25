@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/capture/Navbar";
 import Chatbot from "@/components/capture/Chatbot";
+import logo from "@/assets/capture-logo.png";
 
 const BOOK_URL = "https://physiofirst.janeapp.com/";
 
@@ -40,10 +41,10 @@ const BookButton = ({
   className?: string;
 }) => {
   const base =
-    "inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium transition-all hover:scale-[1.02] shadow-[var(--shadow-card)]";
+    "inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold transition-all hover:scale-[1.02] shadow-[var(--shadow-card)]";
   const styles =
     variant === "primary"
-      ? "bg-primary text-primary-foreground hover:bg-primary/90"
+      ? "bg-accent text-accent-foreground hover:brightness-95"
       : variant === "light"
       ? "bg-background text-foreground hover:bg-muted"
       : "bg-transparent border border-current hover:bg-foreground/5";
@@ -257,10 +258,10 @@ const Index = () => {
           <div className="lg:col-span-5 relative animate-scale-in">
             <div className="aspect-[4/5] rounded-[2.25rem] bg-card overflow-hidden shadow-[var(--shadow-float)] border border-border">
               <img
-                src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=900&q=80"
-                alt="Compassionate healthcare team supporting a patient"
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=900&q=80"
+                alt="Capture Therapeutics physiotherapist guiding a patient through rehabilitation"
                 className="w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
               />
             </div>
             <div className="absolute -left-3 -bottom-4 md:-left-8 md:-bottom-8 bg-background rounded-2xl border border-border shadow-[var(--shadow-card)] p-4 max-w-[16rem]">
@@ -593,11 +594,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center">
-                  <HandHeart className="w-4 h-4" />
-                </span>
-                <span className="font-serif text-lg">Capture Therapeutics</span>
+              <div className="mb-4">
+                <img src={logo} alt="Capture Therapeutics" className="h-10 w-auto" />
               </div>
               <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
                 A collaborative healthcare team focused on timely, high-quality care across the Maritimes.
