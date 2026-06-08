@@ -258,7 +258,7 @@ const Index = () => {
           <div className="lg:col-span-5 relative animate-scale-in">
             <div className="aspect-[4/5] rounded-[2.25rem] bg-card overflow-hidden shadow-[var(--shadow-float)] border border-border">
               <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=900&q=80"
                 alt="Capture Therapeutics physiotherapist guiding a patient through rehabilitation"
                 className="w-full h-full object-cover"
                 loading="eager"
