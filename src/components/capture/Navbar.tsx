@@ -1,34 +1,45 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X, Calendar } from "lucide-react";
 import logo from "@/assets/capture-logo.png";
-
-const NAV = [
-  { label: "Patients", href: "#patients" },
-  { label: "Vocational Services", href: "#vocational" },
-  { label: "Employers", href: "#employers" },
-  { label: "Clinic Owners", href: "#clinic-owners" },
-  { label: "Locations", href: "#locations" },
-  { label: "Capture Talks", href: "#capture-talks" },
-  { label: "Join Our Crew", href: "#join" },
-  { label: "Shop", href: "#shop" },
-];
-
-const BOOK_URL = "https://physiofirst.janeapp.com/";
+import { BOOK_URL, NAV_ITEMS } from "@/lib/capture-links";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 shrink-0" aria-label="Capture Therapeutics home">
+        <Link
+          to="/"
+          onClick={() => {
+            if (location.pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="flex items-center gap-2 shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded"
+          aria-label="Capture Therapeutics home"
+        >
           <img src={logo} alt="Capture Therapeutics" className="h-9 md:h-10 w-auto" />
-        </a>
+        </Link>
 
-        <nav className="hidden xl:flex items-center gap-6 text-sm text-muted-foreground">
-          {NAV.map((n) => (
-            <a key={n.label} href={n.href} className="hover:text-primary transition-colors">
+        <nav className="hidden xl:flex items-center gap-5 text-sm text-muted-foreground" aria-label="Main">
+          {NAV_ITEMS.map((n) => (
+            <NavLink
+              key={n.to}
+              to={n.to}
+              end={n.to === "/"}
+              className={({ isActive }) =>
+                `hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded ${
+                  isActive ? "text-primary font-semibold" : ""
+                }`
+              }
+            >
               {n.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -36,15 +47,17 @@ const Navbar = () => {
           <a
             href={BOOK_URL}
             target="_blank"
-            rel="noreferrer"
-            className="hidden sm:inline-flex items-center rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold hover:brightness-95 hover:scale-[1.02] transition-all shadow-[var(--shadow-card)]"
+            rel="noopener noreferrer"
+            aria-label="Book an appointment with Capture Therapeutics"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold hover:brightness-95 hover:scale-[1.02] transition-all shadow-[var(--shadow-card)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            Book Now
+            <Calendar className="w-4 h-4" /> Book Now
           </a>
           <button
             onClick={() => setOpen((o) => !o)}
-            className="xl:hidden p-2 rounded-lg hover:bg-muted"
-            aria-label="Toggle menu"
+            className="xl:hidden p-2 rounded-lg hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -53,21 +66,26 @@ const Navbar = () => {
 
       {open && (
         <div className="xl:hidden border-t border-border bg-background">
-          <nav className="px-4 py-4 flex flex-col gap-1">
-            {NAV.map((n) => (
-              <a
-                key={n.label}
-                href={n.href}
+          <nav className="px-4 py-4 flex flex-col gap-1" aria-label="Mobile">
+            {NAV_ITEMS.map((n) => (
+              <NavLink
+                key={n.to}
+                to={n.to}
+                end={n.to === "/"}
                 onClick={() => setOpen(false)}
-                className="px-3 py-3 rounded-lg text-sm hover:bg-muted"
+                className={({ isActive }) =>
+                  `px-3 py-3 rounded-lg text-sm hover:bg-muted ${isActive ? "bg-muted text-primary font-semibold" : ""}`
+                }
               >
                 {n.label}
-              </a>
+              </NavLink>
             ))}
             <a
               href={BOOK_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Book an appointment with Capture Therapeutics"
+              onClick={() => setOpen(false)}
               className="mt-2 text-center rounded-full bg-accent text-accent-foreground px-5 py-3 text-sm font-semibold"
             >
               Book Now
