@@ -69,7 +69,7 @@ const PATHWAYS = [
   { icon: Building2, title: "I’m an employer", desc: "Workplace wellness, ergonomics, and injury prevention.", href: "#employers", cta: "Explore programs" },
   { icon: HeartHandshake, title: "I’m a clinic owner", desc: "A thoughtful transition that protects your legacy and team.", href: "#clinic-owners", cta: "Partner with us" },
   { icon: Users, title: "I want to join the team", desc: "Grow your practice with the Capture Crew.", href: "#join", cta: "View roles" },
-  { icon: MapPin, title: "I want to find a location", desc: "Three welcoming clinics across the Maritimes.", href: "#locations", cta: "See locations" },
+  { icon: MapPin, title: "I want to find a location", desc: "Five welcoming clinics across the Maritimes.", href: "#locations", cta: "See locations" },
 ];
 
 const SERVICES = [
