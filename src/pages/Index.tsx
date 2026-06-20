@@ -133,17 +133,31 @@ const LOCATIONS = [
   },
   {
     city: "Truro, NS",
-    address: "Truro, Nova Scotia",
-    phone: "(902) 000-0000",
-    fax: "(902) 000-0001",
+    address: "1 Commercial St, Unit 104, Truro, NS B2N 3H8",
+    phone: "(902) 843-9681",
+    fax: "(902) 843-9683",
     email: "truro@capturetherapeutics.com",
   },
   {
     city: "Woodstock, NB",
-    address: "Woodstock, New Brunswick",
-    phone: "(506) 000-0000",
-    fax: "(506) 000-0001",
+    address: "100 Jones St, Suite 201, Woodstock, NB E7M 0H6",
+    phone: "(506) 325-1565",
+    fax: "(506) 325-0738",
     email: "woodstock@capturetherapeutics.com",
+  },
+  {
+    city: "Grand Falls, NB",
+    address: "68 Ouellette St, Suite 100, Grand Falls, NB E3Z 1A6",
+    phone: "(506) 473-7064",
+    fax: "(506) 473-6936",
+    email: "admin@capturetherapeutics.com",
+  },
+  {
+    city: "Kedgwick, NB",
+    address: "116A Rue Notre Dame, Kedgwick, NB E8B 1H8",
+    phone: "(506) 473-7064",
+    fax: "(506) 473-6936",
+    email: "admin@capturetherapeutics.com",
   },
 ];
 
